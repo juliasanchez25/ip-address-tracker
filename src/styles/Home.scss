@@ -1,0 +1,52 @@
+header {
+  display: flex;
+  justify-content: center;
+  background-image: url("../public/img/pattern-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+
+  .header-container {
+    display: inline-block;
+
+    h1 {
+      margin-top: 5vh;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #fff;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3vh;
+
+      input {
+        width: 60vw;
+        height: 60px;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        padding: 8px;
+      }
+
+      button {
+        width: 20vw;
+        max-width: 60px;
+        height: 60px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: #000;
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
+    }
+  }
+}
