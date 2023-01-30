@@ -4,24 +4,21 @@ import "../styles/Map.scss";
 import "leaflet/dist/leaflet.css";
 import icon from "../components/icon"
 import { useState, useEffect } from "react"
+import "dotenv"
 
-const Map = () => {
+const Map = ({ ip }: any) => {
+  console.log(ip)
   const [address, setAddress]: any = useState(null)
-  const [ipAddress, setIpAddress] = useState("")
 
   useEffect(() => {
-    try {
-      const getInitialData = async () => {
-        const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=192.212.174.101`)
-        const data = await res.json()
-        setAddress(data)
-      }
-
-      getInitialData()
-    } catch (error) {
-      console.log(error)
+    const getInitialData = async () => {
+      const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${import.meta.env.VITE_API_KEY}&ipAddress=8.8.8.8`)
+      const data = await res.json()
+      setAddress(data)
     }
-  }, [])
+
+    getInitialData()
+  }, [address])
 
   return (
     <div>
@@ -72,5 +69,6 @@ const Map = () => {
     </div>
   );
 };
+
 
 export default Map;
